@@ -1,5 +1,47 @@
+@font-face {
+    font-family: 'Inter';
+    src : url('../../fonts/Inter.ttf');
+}
+
 header {
     width: 100%;
-    height: 60px;
     background-color: #fff;
+}
+
+nav {
+    margin: 0 80px 0 80px;
+}
+
+div.header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0 0 0;
+}
+
+.logo {
+    width: 51px;
+    height: 40px;
+}
+
+div.lien-redirection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.lien-redirection ul {
+    font-family: 'Inter';
+    font-size: 18px;
+    font-weight: 700;
+    height: 22px;
+    margin: 0 40px 0 40px;
+}
+
+.barre {
+    display: inline-block;
+    height: 2px;
+    width: 100%;
+    background-color: black;
 }
