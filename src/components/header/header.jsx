@@ -15,7 +15,7 @@ const Header = () => {
                         <ul>Nous rejoindre</ul>
                     </div>
                 </div>
-                <span className='barre'></span>
+                <div className='barre'></div>
             </nav>
         </header>
     )

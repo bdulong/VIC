@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Inter';
+    src : url('../../fonts/Inter.ttf');
+}
+
+.cta-join {
+    width: 226px;
+    background-color: white;
+    padding: 20px 40px;
+    border: 2px solid #000000;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.cta-join p {
+    display: inline-block;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 700;
+}

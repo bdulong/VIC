@@ -13,3 +13,7 @@
 .hero-text {
     margin: 80px 0 80px 0;
 }
+
+.hero-text svg {
+    margin: 0 0 40px 0;
+}
