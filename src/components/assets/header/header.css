@@ -32,6 +32,7 @@ div.lien-redirection {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 80px;
 }
 
 div.lien-redirection ul {
@@ -40,7 +41,6 @@ div.lien-redirection ul {
     font-size: 18px;
     font-weight: 700;
     height: 22px;
-    margin: 0 40px 0 40px;
 }
 
 .barre {
