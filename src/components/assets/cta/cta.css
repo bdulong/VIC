@@ -13,6 +13,12 @@
     text-align: center;
 }
 
+.cta-join:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
 .cta-join p {
     display: inline-block;
     font-family: Inter;
@@ -20,4 +26,8 @@
     font-weight: 700;
     color: black;
     text-decoration: none;
+}
+
+.cta-join:hover p {
+    color: white;
 }

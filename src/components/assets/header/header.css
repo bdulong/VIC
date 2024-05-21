@@ -43,6 +43,10 @@ div.lien-redirection ul {
     height: 22px;
 }
 
+div.lien-redirection ul:hover {
+    color: grey;
+}
+
 .barre {
     display: inline-block;
     height: 2px;
