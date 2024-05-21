@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Inter';
-    src : url('../../fonts/Inter.ttf');
+    src : url('../../../fonts/Inter.ttf');
 }
 
 header {
@@ -36,6 +36,7 @@ div.lien-redirection {
 
 div.lien-redirection ul {
     font-family: 'Inter';
+    color: black;
     font-size: 18px;
     font-weight: 700;
     height: 22px;
@@ -47,4 +48,9 @@ div.lien-redirection ul {
     height: 2px;
     width: 100%;
     background-color: black;
+}
+
+a {
+    text-decoration: none;
+    margin: 0;
 }

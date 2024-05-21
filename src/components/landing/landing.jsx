@@ -1,8 +1,8 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 import './landing.css';
-import Header from "../header/header.jsx";
-import CTAJoin from '../assets/cta.jsx';
+import Header from "../assets/header/header.jsx";
+import CTAJoin from '../assets/cta/cta.jsx';
 
 function LandingPage() {
     return (
