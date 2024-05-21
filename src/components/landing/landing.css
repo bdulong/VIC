@@ -19,5 +19,34 @@
 }
 
 .intro-text {
-    margin: 100px 0 104px 80px;
+    margin: 100px 80px 104px 80px;
+}
+
+.explanatory-text-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 80px 104px 80px;
+    gap: 80px;
+}
+
+.explanatory-text-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.explanatory-text-content svg {
+    flex-shrink: 0;
+}
+
+.explanatory-text {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 40px;
+}
+
+.explanatory-text__left {
+    display: flex;
+    flex-direction: column;
+    margin: 0 40px 0 0;
 }
