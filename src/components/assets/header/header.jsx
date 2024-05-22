@@ -16,7 +16,7 @@ const Header = () => {
                     <Link to="/nous-rejoindre"><ul>Nous rejoindre</ul></Link>
                     </div>
                 </div>
-                <div className='barre'></div>
+                <hr />
             </nav>
         </header>
     )

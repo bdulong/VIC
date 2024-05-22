@@ -47,11 +47,9 @@ div.lien-redirection ul:hover {
     color: grey;
 }
 
-.barre {
-    display: inline-block;
-    height: 2px;
-    width: 100%;
-    background-color: black;
+hr {
+    border: 1px solid black;
+    margin: 10px 0 0 0;
 }
 
 a {
@@ -67,6 +65,6 @@ a:hover {
 #qui-sommes-nous::before {
     content: "";
     display: block;
-    height: 168.5px;
-    margin: -168.5px 0 0 0;
+    height: 164.5px;
+    margin: -164.5px 0 0 0;
 }

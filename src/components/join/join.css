@@ -1,0 +1,23 @@
+.title-content {
+    display: flex;
+    flex-direction: row;
+    margin: 106px 80px 20px 80px;
+    align-items: center;
+    gap: 20px;
+}
+
+.title-text-illustration {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.title-content p {
+    margin: 10px 0 0 0;
+}
+
+.title-container hr {
+    margin: 0 80px 0 80px;
+    border: 1px solid black;
+}
