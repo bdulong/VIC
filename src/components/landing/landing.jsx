@@ -10,40 +10,40 @@ function LandingPage() {
             <div className='hero-banner'>
                 <div className='hero-text'>
                     <h3>Élections municipale Paris 2026</h3>
-                    <div class="hero-container-stylised-text">
-                        <div class="row-stylised-text">
-                            <div class="box-stylised-hero-text red-extrabold">Misons</div>
-                            <div class="box-stylised-hero-text">sur</div>
+                    <div className="hero-container-stylised-text">
+                        <div className="row-stylised-text">
+                            <div className="box-stylised-hero-text red-extrabold">Misons</div>
+                            <div className="box-stylised-hero-text">sur</div>
                         </div>
-                        <div class="row-stylised-text">
-                            <div class="box-stylised-hero-text yellow-extrabold">l'intelligence</div>
+                        <div className="row-stylised-text">
+                            <div className="box-stylised-hero-text yellow-extrabold">l'intelligence</div>
                         </div>
-                        <div class="row-stylised-text">
-                            <div class="box-stylised-hero-text green-extrabold">collective</div>
+                        <div className="row-stylised-text">
+                            <div className="box-stylised-hero-text green-extrabold">collective</div>
                         </div>
                     </div>
                     <CTAJoin />
                 </div>
             </div>
             <div className='intro-text' id='qui-sommes-nous'>
-                <div class="hero-container-stylised-text">
-                    <div class="row-stylised-text">
-                        <div class="box-stylised-intro-text yellow-bold">L'intelligence</div>
-                        <div class="box-stylised-intro-text green-bold">collective</div>
-                        <div class="box-stylised-intro-text">se manifeste par le</div>
+                <div className="hero-container-stylised-text">
+                    <div className="row-stylised-text">
+                        <div className="box-stylised-intro-text yellow-bold">L'intelligence</div>
+                        <div className="box-stylised-intro-text green-bold">collective</div>
+                        <div className="box-stylised-intro-text">se manifeste par le</div>
                     </div>
-                    <div class="row-stylised-text">
-                        <div class="box-stylised-intro-text">fait qu'une équipe d'agents</div>
-                        <div class="box-stylised-intro-text red-bold">coopérants</div>
-                        <div class="box-stylised-intro-text comma">, peut</div>
+                    <div className="row-stylised-text">
+                        <div className="box-stylised-intro-text">fait qu'une équipe d'agents</div>
+                        <div className="box-stylised-intro-text red-bold">coopérants</div>
+                        <div className="box-stylised-intro-text comma">, peut</div>
                     </div>
-                    <div class="row-stylised-text">
-                        <div class="box-stylised-intro-text">résoudre des problèmes plus</div>
-                        <div class="box-stylised-intro-text yellow-bold">efficacement</div>
-                        <div class="box-stylised-intro-text comma">,</div>
+                    <div className="row-stylised-text">
+                        <div className="box-stylised-intro-text">résoudre des problèmes plus</div>
+                        <div className="box-stylised-intro-text yellow-bold">efficacement</div>
+                        <div className="box-stylised-intro-text comma">,</div>
                     </div>
-                    <div class="row-stylised-text">
-                        <div class="box-stylised-intro-text">que lorsque ces agents travaillent isolément.</div>
+                    <div className="row-stylised-text">
+                        <div className="box-stylised-intro-text">que lorsque ces agents travaillent isolément.</div>
                     </div>
                 </div>
             </div>
@@ -144,18 +144,17 @@ function LandingPage() {
                 </div>
             </div>
             <div className='text-action-container'>
-                <div class="hero-container-stylised-text">
-                    <div class="row-stylised-text">
-                        <div class="box-stylised-intro-text">Pour se</div>
-                        <div class="box-stylised-intro-text red-bold">rencontrer</div>
-                        <div class="box-stylised-intro-text comma">, il suffit de s'inscrire décrire</div>
+                <div className="hero-container-stylised-text">
+                    <div className="row-stylised-text">
+                        <div className="box-stylised-intro-text">Pour se</div>
+                        <div className="box-stylised-intro-text red-bold">rencontrer</div>
+                        <div className="box-stylised-intro-text comma">, il suffit de s'inscrire décrire ses</div>
                     </div>
-                    <div class="row-stylised-text">
-                        <div class="box-stylised-intro-text">ses</div>
-                        <div class="box-stylised-intro-text yellow-bold">spécialisations</div>
-                        <div class="box-stylised-intro-text comma">, et ses</div>
-                        <div class="box-stylised-intro-text green-bold">actions</div>
-                        <div class="box-stylised-intro-text">pour l'année 2024.</div>
+                    <div className="row-stylised-text">
+                        <div className="box-stylised-intro-text yellow-bold">spécialisations</div>
+                        <div className="box-stylised-intro-text comma">, et ses</div>
+                        <div className="box-stylised-intro-text green-bold">actions</div>
+                        <div className="box-stylised-intro-text">pour l'année 2024.</div>
                     </div>
                 </div>
                 <CTAJoin />
