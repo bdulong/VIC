@@ -18,6 +18,35 @@
     margin: 0 0 40px 0;
 }
 
+.hero-container-stylised-text {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 40px 0;
+}
+.row-stylised-text {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.row-stylised-text:last-child {
+    margin-bottom: 0;
+}
+
+.box-stylised-text {
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 800;
+    padding: 10px;
+    color: black;
+}
+.red { background-color: #BB0000; }
+.yellow { background-color: #EAD200; }
+.green { background-color: #35CA32; }
+
+.box-stylised-text:not(:last-child) {
+    margin-right: 5px;
+}
+
 .intro-text {
     margin: 100px 80px 104px 80px;
 }
