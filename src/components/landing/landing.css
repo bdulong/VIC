@@ -18,6 +18,7 @@
     margin: 0 0 40px 0;
 }
 
+/* Stylised text for hero banner */
 .hero-container-stylised-text {
     display: flex;
     flex-direction: column;
@@ -32,16 +33,16 @@
     margin-bottom: 0;
 }
 
-.box-stylised-text {
+.box-stylised-hero-text {
     font-family: Inter;
     font-size: 48px;
     font-weight: 800;
-    padding: 10px;
+    padding: 8px 10px;
     color: black;
 }
-.red { background-color: #BB0000; }
-.yellow { background-color: #EAD200; }
-.green { background-color: #35CA32; }
+.red-extrabold { background-color: #BB0000; font-weight: 800; }
+.yellow-extrabold { background-color: #EAD200; font-weight: 800; }
+.green-extrabold { background-color: #35CA32; font-weight: 800; }
 
 .box-stylised-text:not(:last-child) {
     margin-right: 5px;
@@ -50,6 +51,27 @@
 .intro-text {
     margin: 100px 80px 104px 80px;
 }
+
+.box-stylised-intro-text {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 400;
+    padding: 8px 10px;
+    color: black;
+}
+.red-bold { background-color: #BB0000; font-weight: 600; }
+.yellow-bold { background-color: #EAD200; font-weight: 600; }
+.green-bold { background-color: #35CA32; font-weight: 600; }
+
+.intro-text > .hero-container-stylised-text > .row-stylised-text > .box-stylised-intro-text:first-child {
+    margin: 0px 5px 0 0;
+}
+
+.row-stylised-text > [class="box-stylised-intro-text"]:first-child {
+    padding: 8px 10px 8px 0;
+}
+
+.comma { padding: 8px 10px 8px 0; }
 
 .explanatory-text-container {
     display: flex;
