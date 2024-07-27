@@ -1,18 +1,24 @@
-.title-content {
-    display: flex;
-    flex-direction: row;
-    margin: 106px 80px 20px 80px;
-    align-items: center;
-    gap: 20px;
+@media (min-width: 1000px) {
+    .title-content {
+        display: flex;
+        flex-direction: row;
+        margin: 106px 80px 20px 80px;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .title-text-illustration {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .title-content p {
+        margin: 10px 0 0 0;
+    }
 }
 
-.title-text-illustration {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
-
-.title-content p {
-    margin: 10px 0 0 0;
+@media (max-width: 980px) {
+    /* Faire */
 }
