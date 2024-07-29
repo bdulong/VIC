@@ -1,4 +1,5 @@
-.hero-banner {
+/* Hero Banner Container CSS */
+.hero-banner__container {
     position: relative;
     height: 100%;
     background-image: url('../../../public/images/hero-banner-picture.png');
@@ -11,14 +12,13 @@
     margin: 64.5px 0 0 0;
     overflow: hidden;
 }
-
-@media (max-width: 701px) {  
-    .hero-banner {
+@media (max-width: 1020px) {  
+    .hero-banner__container {
         padding: 0 40px;
     }
 }
 
-.hero-banner::after {
+.hero-banner__container::after {
     content: ''; /* Vide pour apparaitre */
     position: absolute;
     bottom: 0;
@@ -29,20 +29,16 @@
     pointer-events: none; /* Permet aux clics de passer à travers ? */
 }
 
-.hero-text {
+.hero-text__container {
     margin: 80px 0 80px 0;
 }
 
-.hero-text svg {
-    margin: 0 0 40px 0;
-}
-
-/* Stylised text for hero banner */
 .hero-container-stylised-text {
     display: flex;
     flex-direction: column;
     margin: 0 0 40px 0;
 }
+
 .row-stylised-text {
     display: flex;
     margin-bottom: 5px;
@@ -67,57 +63,63 @@
     margin-right: 5px;
 }
 
-.intro-text {
+/* Intro Text Container CSS */
+.intro-text__container {
     margin: 100px 80px 104px 80px;
 }
-
-@media (max-width: 701px) {  
-    .intro-text {
+@media (max-width: 1020px) {  
+    .intro-text__container {
         margin: 100px 40px 104px 40px
     }
 }
+@media (min-width: 1400px) {  
+    .intro-text__container {
+        margin: 100px 268px 104px 268px
+    }
+}
 
-.box-stylised-intro-text {
+.stylised-intro-text {
     font-family: Inter;
     font-size: 32px;
     font-weight: 400;
-    padding: 8px 10px;
+    line-height: 1.85; /* Espace entre les lignes */
     color: black;
 }
-.red-bold { background-color: #BB0000; font-weight: 600; }
-.yellow-bold { background-color: #EAD200; font-weight: 600; }
-.green-bold { background-color: #35CA32; font-weight: 600; }
+.red-bold { background-color: #BB0000; font-weight: 600; padding: 8px 10px; margin: 0 3px; }
+.yellow-bold { background-color: #EAD200; font-weight: 600; padding: 8px 10px; margin: 0 3px; }
+.green-bold { background-color: #35CA32; font-weight: 600; padding: 8px 10px; margin: 0 3px; }
+/* @media (min-width: 1020px) {
+    .intro-text__container .stylised-intro-text,
+    .text-action__container .stylised-intro-text {
+        max-width: 65%;
+    }
+} */
 
-.intro-text > .hero-container-stylised-text > .row-stylised-text > .box-stylised-intro-text:first-child {
-    margin: 0px 5px 0 0;
-}
-
-.row-stylised-text > [class="box-stylised-intro-text"]:first-child {
-    padding: 8px 10px 8px 0;
-}
-
-.comma { padding: 8px 10px 8px 0; }
-
-.explanatory-text-container {
+/* Explanatory Text Container CSS */
+.explanatory-text__container {
     display: flex;
     flex-direction: column;
     margin: 0 80px 104px 80px;
     gap: 80px;
 }
-
-@media (max-width: 701px) {  
-    .explanatory-text-container {
+@media (max-width: 1020px) {  
+    .explanatory-text__container {
         margin: 0 40px 104px 40px;
     }
 }
+@media (min-width: 1400px) {  
+    .explanatory-text__container {
+        margin: 0 268px 104px 268px;
+    }
+}
 
-.explanatory-text-content {
+.explanatory-text__content {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.explanatory-text-content svg {
+.explanatory-text__content svg {
     flex-shrink: 0;
 }
 
@@ -127,19 +129,24 @@
     margin: 0 0 0 40px;
 }
 
-.explanatory-text__left {
+.explanatory-text-left {
     display: flex;
     flex-direction: column;
     margin: 0 40px 0 0;
 }
 
-.reason-text-container {
+/* Reason Text Container CSS */
+.reason-text__container {
     margin: 0 80px 104px 80px;
 }
-
-@media (max-width: 701px) {  
-    .reason-text-container {
+@media (max-width: 1020px) {
+    .reason-text__container {
         margin: 0 40px 104px 40px;
+    }
+}
+@media (min-width: 1400px) {
+    .reason-text__container {
+        margin: 0 268px 104px 268px;
     }
 }
 
@@ -148,7 +155,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
 }
-@media (max-width: 950px) {
+@media (max-width: 1020px) {
     .reason-text-content__container {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -167,15 +174,20 @@
     margin: 0 0 0 40px;
 }
 
-.text-action-container {
+/* Text Action Container CSS */
+.text-action__container {
     display: flex;
     flex-direction: column;
     margin: 0 80px 104px 80px;
     gap: 20px;
 }
-
-@media (max-width: 701px) {  
-    .text-action-container {
+@media (max-width: 1020px) {  
+    .text-action__container {
         margin: 0 40px 104px 40px;
+    }
+}
+@media (min-width: 1400px) {  
+    .text-action__container {
+        margin: 0 268px 104px 268px;
     }
 }

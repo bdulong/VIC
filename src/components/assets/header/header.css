@@ -10,7 +10,7 @@ nav {
     margin: 0 80px;
 }
 
-@media (max-width: 701px) {  
+@media (max-width: 1020px) {  
     nav {
         margin: 0 40px;
     }
@@ -106,7 +106,7 @@ a:hover {
         padding: 10px 80px 0 80px;
     }
 
-    @media (max-width: 701px) {  
+    @media (max-width: 1020px) {  
         .mobile-menu {
             padding: 20px 40px 0 40px;
         }
