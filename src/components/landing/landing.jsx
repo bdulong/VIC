@@ -30,16 +30,16 @@ function LandingPage() {
                     <span className="yellow-bold">L'intelligence</span>
                     <span className="green-bold">collective</span>
                     se manifeste par le fait qu'une équipe d'agents
-                    <span className="red-bold">coopérants</span>, peut
-                    résoudre des problèmes plus
-                    <span className="yellow-bold">efficacement</span>,
-                    que lorsque ces agents travaillent isolément.
+                    <span className="red-bold">coopérants</span>
+                    , peut résoudre des problèmes plus
+                    <span className="yellow-bold">efficacement</span>
+                    , que lorsque ces agents travaillent isolément.
                 </p>
             </div>
             <div className='explanatory-text__container'>
                 <div className='explanatory-text__content'>
                     <img src='/icons/red-square-160-180.svg' alt="Carré rouge décoratif"/>
-                    <div className='explanatory-text'>
+                    <div className='explanatory-text-right'>
                         <h3>Coopérons pour un nouveau Paris</h3>
                         <p>À chaque élection l’abstention monte. Les partis politique ne font que diviser les parisiens. Aboutissant à l’élection d’une personne avec seulement 15% des inscrits.</p>
                     </div>

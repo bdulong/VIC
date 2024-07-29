@@ -15,6 +15,11 @@ nav {
         margin: 0 40px;
     }
 }
+@media (max-width: 520px) {  
+    nav {
+        margin: 0 10px;
+    }
+}
 
 div.header-content {
     display: flex;
@@ -109,6 +114,11 @@ a:hover {
     @media (max-width: 1020px) {  
         .mobile-menu {
             padding: 20px 40px 0 40px;
+        }
+    }
+    @media (max-width: 520px) {  
+        .mobile-menu {
+            padding: 20px 10px 0 10px;
         }
     }
 

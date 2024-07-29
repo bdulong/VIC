@@ -17,6 +17,11 @@
         padding: 0 40px;
     }
 }
+@media (max-width: 520px) {  
+    .hero-banner__container {
+        padding: 0 10px;
+    }
+}
 
 .hero-banner__container::after {
     content: ''; /* Vide pour apparaitre */
@@ -55,6 +60,11 @@
     padding: 8px 10px;
     color: black;
 }
+@media (max-width: 650px) {  
+    .box-stylised-hero-text {
+        font-size: 44px;
+    }
+}
 .red-extrabold { background-color: #BB0000; font-weight: 800; }
 .yellow-extrabold { background-color: #EAD200; font-weight: 800; }
 .green-extrabold { background-color: #35CA32; font-weight: 800; }
@@ -72,6 +82,11 @@
         margin: 100px 40px 104px 40px
     }
 }
+@media (max-width: 520px) {  
+    .intro-text__container {
+        margin: 100px 10px 104px 10px;
+    }
+}
 @media (min-width: 1400px) {  
     .intro-text__container {
         margin: 100px 268px 104px 268px
@@ -85,15 +100,15 @@
     line-height: 1.85; /* Espace entre les lignes */
     color: black;
 }
+@media (max-width: 650px) {  
+	.stylised-intro-text {
+        font-size: 28px;
+        line-height: 1.95; /* Espace entre les lignes */
+    }
+}
 .red-bold { background-color: #BB0000; font-weight: 600; padding: 8px 10px; margin: 0 3px; }
 .yellow-bold { background-color: #EAD200; font-weight: 600; padding: 8px 10px; margin: 0 3px; }
 .green-bold { background-color: #35CA32; font-weight: 600; padding: 8px 10px; margin: 0 3px; }
-/* @media (min-width: 1020px) {
-    .intro-text__container .stylised-intro-text,
-    .text-action__container .stylised-intro-text {
-        max-width: 65%;
-    }
-} */
 
 /* Explanatory Text Container CSS */
 .explanatory-text__container {
@@ -107,6 +122,11 @@
         margin: 0 40px 104px 40px;
     }
 }
+@media (max-width: 520px) {  
+    .explanatory-text__container {
+        margin: 0 10px 104px 10px;
+    }
+}
 @media (min-width: 1400px) {  
     .explanatory-text__container {
         margin: 0 268px 104px 268px;
@@ -118,21 +138,32 @@
     flex-direction: row;
     align-items: center;
 }
-
-.explanatory-text__content svg {
-    flex-shrink: 0;
+@media (max-width: 520px) {  
+    .explanatory-text__content {
+        flex-direction: column;
+    }
 }
 
-.explanatory-text {
+.explanatory-text-right {
     display: flex;
     flex-direction: column;
     margin: 0 0 0 40px;
+}
+@media (max-width: 520px) {  
+    .explanatory-text-right {
+        margin: 40px 0 0 0;
+    }
 }
 
 .explanatory-text-left {
     display: flex;
     flex-direction: column;
     margin: 0 40px 0 0;
+}
+@media (max-width: 520px) {  
+    .explanatory-text-left {
+        margin: 0 0 40px 0;
+    }
 }
 
 /* Reason Text Container CSS */
@@ -142,6 +173,11 @@
 @media (max-width: 1020px) {
     .reason-text__container {
         margin: 0 40px 104px 40px;
+    }
+}
+@media (max-width: 520px) {
+    .reason-text__container {
+        margin: 0 10px 104px 10px;
     }
 }
 @media (min-width: 1400px) {
@@ -184,6 +220,11 @@
 @media (max-width: 1020px) {  
     .text-action__container {
         margin: 0 40px 104px 40px;
+    }
+}
+@media (max-width: 520px) {  
+    .text-action__container {
+        margin: 0 10px 104px 10px;
     }
 }
 @media (min-width: 1400px) {  
