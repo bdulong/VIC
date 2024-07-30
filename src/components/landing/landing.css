@@ -99,6 +99,7 @@
     font-weight: 400;
     line-height: 1.85; /* Espace entre les lignes */
     color: black;
+    overflow-wrap: break-word;
 }
 @media (max-width: 650px) {  
 	.stylised-intro-text {
@@ -106,9 +107,13 @@
         line-height: 1.95; /* Espace entre les lignes */
     }
 }
-.red-bold { background-color: #BB0000; font-weight: 600; padding: 8px 10px; margin: 0 3px; }
-.yellow-bold { background-color: #EAD200; font-weight: 600; padding: 8px 10px; margin: 0 3px; }
-.green-bold { background-color: #35CA32; font-weight: 600; padding: 8px 10px; margin: 0 3px; }
+.red-bold { background-color: #BB0000; font-weight: 600; padding: 8px 10px; margin: 0 3px; white-space: nowrap; }
+.yellow-bold { background-color: #EAD200; font-weight: 600; padding: 8px 10px; margin: 0 3px; white-space: nowrap; }
+.green-bold { background-color: #35CA32; font-weight: 600; padding: 8px 10px; margin: 0 3px; white-space: nowrap; }
+.no-break {
+    white-space: nowrap;
+    display: inline-block;
+}
 
 /* Explanatory Text Container CSS */
 .explanatory-text__container {

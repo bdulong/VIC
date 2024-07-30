@@ -29,7 +29,7 @@ function LandingPage() {
                 <p className="stylised-intro-text">
                     <span className="yellow-bold">L'intelligence</span>
                     <span className="green-bold">collective</span>
-                    se manifeste par le fait qu'une équipe d'agents
+                    <span className="no-break">se</span> manifeste par le fait qu'une équipe d'agents
                     <span className="red-bold">coopérants</span>
                     , peut résoudre des problèmes plus
                     <span className="yellow-bold">efficacement</span>

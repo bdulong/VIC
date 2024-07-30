@@ -4,6 +4,7 @@
 }
 
 .cta-join {
+    display: inline-block;
     overflow: hidden;
     width: 310px;
     background-color: white;
@@ -27,7 +28,6 @@
 }
 
 .cta-join p {
-    display: inline-block;
     font-family: Inter;
     font-size: 24px;
     font-weight: 700;
