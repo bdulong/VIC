@@ -38,7 +38,7 @@ function LandingPage() {
             </div>
             <div className='explanatory-text__container'>
                 <div className='explanatory-text__content'>
-                    <img src='/icons/red-square-160-180.svg' alt="Carré rouge décoratif"/>
+                    <img className='svg-explanatory-text' src='/icons/red-square-160-180.svg' alt="Carré rouge décoratif"/>
                     <div className='explanatory-text-right'>
                         <h3>Coopérons pour un nouveau Paris</h3>
                         <p>À chaque élection l’abstention monte. Les partis politique ne font que diviser les parisiens. Aboutissant à l’élection d’une personne avec seulement 15% des inscrits.</p>
@@ -49,7 +49,7 @@ function LandingPage() {
                         <h3>Réunissons-nous</h3>
                         <p>Pour trouver une nouvelle voie, où des gens d’opinions différentes mais ayant des passions et des spécialités, se rassembleront pour gérer de façon concrète et réaliste notre capitale.</p>
                     </div>
-                    <img src='/icons/yellow-circle-91-180.svg' alt="Ronds jaune décoratif"/>
+                    <img className='svg-explanatory-text' src='/icons/yellow-circle-91-180.svg' alt="Ronds jaune décoratif"/>
                 </div>
             </div>
             <div className='reason-text__container'>

@@ -74,6 +74,12 @@ a:hover {
     height: 164.5px;
     margin: -164.5px 0 0 0;
 }
+@media (max-width: 1020px) {
+    #qui-sommes-nous::before {
+        height: 84.5px;
+        margin: -84.5px 0 0 0;
+    }
+}
 
 .burger-menu {
     display: none;
