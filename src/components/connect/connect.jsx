@@ -6,15 +6,15 @@ function ConnectPage() {
     return (
         <div>
             <Header />
-            {/* <div className='title-container'>
+            <div className='title-container'>
                 <div className='title-content'>
                     <div className='title-text-illustration'>
-                        <img src='/icons/yellow-star-44-70.svg' alt="Ronds jaune décoratif"/>
+                        <img src='/icons/yellow-round-81-70.svg' alt="Ronds jaune décoratif"/>
                         <h1>Se connecter</h1>
                     </div>
-                    <p>Pour trouver une nouvelle voie, ou des gens d’opinions différentes</p>
+                    <p>Inscrivez votre adresse courriel pour vous connecter</p>
                 </div>
-            </div> */}
+            </div>
         </div>
     );
 }
