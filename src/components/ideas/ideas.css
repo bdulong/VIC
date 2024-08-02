@@ -1,9 +1,13 @@
+.title-container {
+    margin: 106px 80px 20px 80px;
+}
+
 .title-content {
     display: flex;
     flex-direction: row;
-    margin: 106px 80px 20px 80px;
     align-items: center;
     gap: 20px;
+    margin: 0 0 32px 0  ;
 }
 
 .title-text-illustration {
@@ -15,4 +19,19 @@
 
 .title-content p {
     margin: 10px 0 0 0;
+}
+
+.categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.categories ul {
+    font-family: 'Inter';
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+    height: 22px;
 }

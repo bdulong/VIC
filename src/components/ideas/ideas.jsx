@@ -14,6 +14,14 @@ function IdeasPage() {
                     </div>
                     <p>Pour trouver une nouvelle voie, ou des gens d’opinions différentes</p>
                 </div>
+                <div className='category-container'>
+                    <div className='categories'>
+                        <ul>Tous</ul>
+                        <ul>Transport</ul>
+                        <ul>Espaces verts</ul>
+                    </div>
+                    <hr />
+                </div>
             </div>
         </div>
     );
