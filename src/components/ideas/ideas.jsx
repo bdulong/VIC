@@ -19,8 +19,39 @@ function IdeasPage() {
                         <ul>Tous</ul>
                         <ul>Transport</ul>
                         <ul>Espaces verts</ul>
+                        <ul>Culture</ul>
+                        <ul>Urbanisme</ul>
+                        <ul>Santé</ul>
+                        <ul>Éducation</ul>
+                        <ul>Technologie</ul>
+                        <ul>Économie</ul>
+                        <ul>Sécurité</ul>
+                        <ul>Commerce</ul>
                     </div>
                     <hr />
+                </div>
+            </div>
+            <div className='ideas-list-container'>
+                <div className='idea-container'>
+                    <div className='idea-content'>
+                        <div className='user-info'>
+                            <img src='/images/user.png' alt="Utilisateur"/>
+                            <div className='idea-title'>
+                                <p>Jooidjfghoidjghn Doeiuhfgiuhdiugh</p>
+                                <h4>Lorem ipsum dolor sit amet dolor sit amet</h4>
+                            </div>
+                            <div className='idea-category'>
+                                <img src='/icons/tag.svg' alt="Catégorie"/>
+                                <h4 className='tag'>Transport</h4>
+                            </div>
+                        </div>
+                        <div className='idea-text-preview'>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat.</p>
+                        </div>
+                    </div>
+                    <div className='idea-interaction'>
+                        
+                    </div>
                 </div>
             </div>
         </div>
