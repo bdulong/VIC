@@ -50,7 +50,14 @@ function IdeasPage() {
                         </div>
                     </div>
                     <div className='idea-interaction'>
-                        
+                        <div className='idea-vote'>
+                            <img src='/icons/upvote.svg' alt="Upvote"/>
+                            <p className='interaction'>9410</p>
+                        </div>
+                        <div className='idea-comment'>
+                            <img src='/icons/commentaire.svg' alt="Commentaire"/>
+                            <p className='interaction'>145</p>
+                        </div>
                     </div>
                 </div>
             </div>
