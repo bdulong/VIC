@@ -42,7 +42,10 @@
 }
 
 .ideas-list-container {
-    margin: 0 80px 24px 80px;
+    margin: 0 80px 104px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .idea-container {
@@ -110,17 +113,9 @@
     filter: brightness(0) saturate(100%) invert(50%);
 }
 
-.appel-action-container {
-    margin: 0 80px 0 80px;
-}
-.appel-action-container:hover {
-    color : grey;
-    cursor: pointer;
-}
-
 .appel-action-text {
     padding: 40px 40px 20px 40px;
-    border: 2px solid #000000;
+    border: 2px solid #291919;
     border-radius: 50px 50px 0 0;
     box-sizing: border-box;
 }
@@ -134,4 +129,9 @@
     border-bottom: 2px solid #000000;
     border-radius: 0 0 50px 50px;
     box-sizing: border-box;
+}
+.appel-action-cta:hover {
+    cursor: pointer;
+    color: white;
+    background-color: black;
 }
