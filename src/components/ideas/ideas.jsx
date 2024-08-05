@@ -61,6 +61,14 @@ function IdeasPage() {
                     </div>
                 </div>
             </div>
+            <div className='appel-action-container'>
+                <div className='appel-action-text'>
+                    <p>Les partis politique ne font que diviser les parisiens. C'est seulement en unissant leurs forces que les Parisiens pourront  redonner tout son sens à la démocratie et façonner un avenir où chaque  voix compte vraiment.</p>
+                </div>
+                <div className='appel-action-cta'>
+                    <p>Rejoignez-nous</p>
+                </div>
+            </div>
         </div>
     );
 }

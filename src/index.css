@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'Inter';
-    src : url('fonts/Inter.ttf');
+    src: url('fonts/Inter.woff2') format('woff2'),
+		url('fonts/Inter.woff') format('woff');
 }
 
 html, body, div, span, applet, object, iframe,
