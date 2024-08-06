@@ -4,10 +4,8 @@ import './cta.css'
 
 const CTAJoin = () => {
     return(
-        <Link to="/nous-rejoindre">
-            <div className='cta-join'>
-                <p>Rejoignez-nous</p>
-            </div>
+        <Link className='cta-join' to="/nous-rejoindre">
+            <p>Rejoignez-nous</p>
         </Link>
     )
 }

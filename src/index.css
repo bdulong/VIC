@@ -1,10 +1,11 @@
 @font-face {
     font-family: 'Inter';
-    src : url('fonts/Inter.ttf');
+    src: url('fonts/Inter.woff2') format('woff2'),
+		url('fonts/Inter.woff') format('woff');
 }
 
 html, body, div, span, applet, object, iframe,
-h4, h5, h6, blockquote, pre, hr,
+h1, h2, h3, h4, h5, h6, blockquote, pre, hr, p,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -53,6 +54,12 @@ h1 {
 	margin: 0;
 	line-height: 58.1px;
 }
+@media (max-width: 650px) {  
+	h1 {
+		font-size: 38px;
+		line-height: 46px;
+	}
+}
 
 h2 {
 	font-family: Inter;
@@ -60,6 +67,12 @@ h2 {
 	font-weight: 700;
 	margin: 0 0 80px 0;
 	line-height: 46px;
+}
+@media (max-width: 650px) {  
+	h2 {
+		font-size: 30px;
+		line-height: 36.3px;
+	}
 }
 
 h3 {
@@ -69,6 +82,51 @@ h3 {
 	margin: 0 0 20px 0;
 	line-height: 38.7px;
 }
+@media (max-width: 650px) {  
+	h3 {
+		font-size: 24px;
+		line-height: 29px;
+	}
+}
+
+h4 {
+	font-family: Inter;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 29px;
+}
+@media (max-width: 650px) {  
+	h4 {
+		font-size: 16px;
+		line-height: 19.4px;
+	}
+}
+
+.tag {
+	font-family: Inter;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 24.2px;
+}
+@media (max-width: 650px) {  
+	.tag {
+		font-size: 12px;
+		line-height: 14.5px;
+	}
+}
+
+.interaction {
+	font-family: Inter;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 24.2px;
+}
+@media (max-width: 650px) {  
+	.interaction {
+		font-size: 12px;
+		line-height: 14.5px;
+	}
+}
 
 p {
 	font-family: Inter;
@@ -76,4 +134,10 @@ p {
 	font-weight: 400;
 	margin: 0;
 	line-height: 29px;
+}
+@media (max-width: 650px) {  
+	p {
+		font-size: 16px;
+		line-height: 19.4px;
+	}
 }
