@@ -1,8 +1,54 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './ideas.css';
 import Header from "../assets/header/header.jsx";
 
+const truncateText = (text, maxLength) => {
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength) + '...';
+};
+
 function IdeasPage() {
+    const [content, setContent] = useState('');
+    const [username, setUsername] = useState('');
+    const [title, setTitle] = useState('');
+    const [modalOpen, setModalOpen] = useState(false);
+    const [selectedIdea, setSelectedIdea] = useState(null);
+
+    useEffect(() => {
+        fetch('/text.json')
+            .then(response => response.json())
+            .then(data => {
+                if (data) {
+                    setContent(data.content);
+                    setUsername(data.username);
+                    setTitle(data.title);
+                } else {
+                    console.error('Data is undefined');
+                }
+            })
+            .catch(error => console.error('Error loading JSON:', error));
+    }, []);
+
+    const Modal = ({ content, username, title, onClose }) => (
+        <div className="modal-overlay" onClick={onClose}>
+            <button className="close-button" onClick={onClose}>X</button>
+            <div className="modal-content" onClick={e => e.stopPropagation()}>
+                <div className='user-info'>
+                    <img src='/images/user.png' alt="Utilisateur"/>
+                    <div className='idea-title'>
+                        <p>{username}</p>
+                        <h4>{title}</h4>
+                    </div>
+                    <div className='idea-category'>
+                        <img src='/icons/tag.svg' alt="Catégorie"/>
+                        <h4 className='tag'>Transport</h4>
+                    </div>
+                </div>
+                <p>{content}</p>
+            </div>
+        </div>
+    );
+
     return (
         <div>
             <Header />
@@ -33,12 +79,12 @@ function IdeasPage() {
             </div>
             <div className='ideas-list-container'>
                 <div className='idea-container'>
-                    <div className='idea-content'>
+                    <div className='idea-content' onClick={() => { setSelectedIdea(content); setModalOpen(true); }}>
                         <div className='user-info'>
                             <img src='/images/user.png' alt="Utilisateur"/>
                             <div className='idea-title'>
-                                <p>Jooidjfghoidjghn Doeiuhfgiuhdiugh</p>
-                                <h4>Lorem ipsum dolor sit amet dolor sit amet</h4>
+                                <p>{username}</p>
+                                <h4>{title}</h4>
                             </div>
                             <div className='idea-category'>
                                 <img src='/icons/tag.svg' alt="Catégorie"/>
@@ -46,7 +92,7 @@ function IdeasPage() {
                             </div>
                         </div>
                         <div className='idea-text-preview'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat.</p>
+                            <p>{truncateText(content, 240)}</p>
                         </div>
                     </div>
                     <div className='idea-interaction'>
@@ -69,12 +115,12 @@ function IdeasPage() {
                     </div>
                 </div>
                 <div className='idea-container'>
-                    <div className='idea-content'>
+                    <div className='idea-content' onClick={() => { setSelectedIdea(content); setModalOpen(true); }}>
                         <div className='user-info'>
                             <img src='/images/user.png' alt="Utilisateur"/>
                             <div className='idea-title'>
-                                <p>Jooidjfghoidjghn Doeiuhfgiuhdiugh</p>
-                                <h4>Lorem ipsum dolor sit amet dolor sit amet</h4>
+                                <p>{username}</p>
+                                <h4>{title}</h4>
                             </div>
                             <div className='idea-category'>
                                 <img src='/icons/tag.svg' alt="Catégorie"/>
@@ -82,7 +128,7 @@ function IdeasPage() {
                             </div>
                         </div>
                         <div className='idea-text-preview'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat.</p>
+                            <p>{truncateText(content, 240)}</p>
                         </div>
                     </div>
                     <div className='idea-interaction'>
@@ -97,12 +143,12 @@ function IdeasPage() {
                     </div>
                 </div>
                 <div className='idea-container'>
-                    <div className='idea-content'>
+                    <div className='idea-content' onClick={() => { setSelectedIdea(content); setModalOpen(true); }}>
                         <div className='user-info'>
                             <img src='/images/user.png' alt="Utilisateur"/>
                             <div className='idea-title'>
-                                <p>Jooidjfghoidjghn Doeiuhfgiuhdiugh</p>
-                                <h4>Lorem ipsum dolor sit amet dolor sit amet</h4>
+                                <p>{username}</p>
+                                <h4>{title}</h4>
                             </div>
                             <div className='idea-category'>
                                 <img src='/icons/tag.svg' alt="Catégorie"/>
@@ -110,7 +156,7 @@ function IdeasPage() {
                             </div>
                         </div>
                         <div className='idea-text-preview'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat.</p>
+                            <p>{truncateText(content, 240)}</p>
                         </div>
                     </div>
                     <div className='idea-interaction'>
@@ -125,6 +171,14 @@ function IdeasPage() {
                     </div>
                 </div>
             </div>
+            {modalOpen && (
+                <Modal 
+                    content={selectedIdea} 
+                    username={username}
+                    title={title}
+                    onClose={() => setModalOpen(false)} 
+                />
+            )}
         </div>
     );
 }
