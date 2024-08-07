@@ -7,19 +7,19 @@ const truncateText = (text, maxLength) => {
     return text.slice(0, maxLength) + '...';
 };
 
-const Modal = ({ content, username, title, onClose }) => (
+const Modal = ({ content, username, title, category, userImage, onClose }) => (
     <div className="modal-overlay" onClick={onClose}>
         <button className="close-button" onClick={onClose}>X</button>
         <div className="modal-content" onClick={e => e.stopPropagation()}>
             <div className='user-info'>
-                <img src='/images/user.png' alt="Utilisateur"/>
+                <img src={userImage} alt={`Avatar de ${username}`}/>
                 <div className='idea-title'>
                     <p>{username}</p>
                     <h4>{title}</h4>
                 </div>
                 <div className='idea-category'>
                     <img src='/icons/tag.svg' alt="Catégorie"/>
-                    <h4 className='tag'>Transport</h4>
+                    <h4 className='tag'>{category}</h4>
                 </div>
             </div>
             <p>{content}</p>
@@ -27,18 +27,18 @@ const Modal = ({ content, username, title, onClose }) => (
     </div>
 );
 
-const IdeaItem = ({ content, username, title, onSelect }) => (
+const IdeaItem = ({ content, username, title, category, userImage, onSelect }) => (
     <div className='idea-container'>
         <div className='idea-content' onClick={onSelect}>
             <div className='user-info'>
-                <img src='/images/user.png' alt="Utilisateur"/>
+                <img src={userImage} alt={`Avatar de ${username}`}/>
                 <div className='idea-title'>
                     <p>{username}</p>
                     <h4>{title}</h4>
                 </div>
                 <div className='idea-category'>
                     <img src='/icons/tag.svg' alt="Catégorie"/>
-                    <h4 className='tag'>Transport</h4>
+                    <h4 className='tag'>{category}</h4>
                 </div>
             </div>
             <div className='idea-text-preview'>
@@ -58,10 +58,9 @@ const IdeaItem = ({ content, username, title, onSelect }) => (
     </div>
 );
 
-const categories = ['Tous', 'Transport', 'Espaces verts', 'Culture', 'Urbanisme', 'Santé', 'Éducation', 'Technologie', 'Économie', 'Sécurité', 'Commerce'];
-
 function IdeasPage() {
     const [ideas, setIdeas] = useState([]);
+    const [categories, setCategories] = useState([]);
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedIdea, setSelectedIdea] = useState(null);
     const [error, setError] = useState(null);
@@ -70,8 +69,9 @@ function IdeasPage() {
         fetch('/text.json')
             .then(response => response.json())
             .then(data => {
-                if (data && data.content && data.username && data.title) {
-                    setIdeas([{ content: data.content, username: data.username, title: data.title }]);
+                if (data && data.ideas && data.categories) {
+                    setIdeas(data.ideas);
+                    setCategories(data.categories);
                 } else {
                     setError('Données manquantes dans le JSON');
                 }
@@ -104,7 +104,7 @@ function IdeasPage() {
             </div>
             <div className='ideas-list-container'>
                 {error && <p className="error-message">{error}</p>}
-                {ideas.map((idea, index) => (
+                {ideas.slice(0, 2).map((idea, index) => (
                     <IdeaItem 
                         key={index}
                         {...idea}
@@ -119,6 +119,13 @@ function IdeasPage() {
                         <p>Rejoignez-nous</p>
                     </div>
                 </div>
+                {ideas.slice(2).map((idea, index) => (
+                    <IdeaItem 
+                        key={index + 2}
+                        {...idea}
+                        onSelect={() => { setSelectedIdea(idea); setModalOpen(true); }}
+                    />
+                ))}
             </div>
             {modalOpen && selectedIdea && (
                 <Modal 
