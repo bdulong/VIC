@@ -24,10 +24,20 @@ const Modal = ({ content, username, title, category, userImage, onClose }) => (
             </div>
             <p>{content}</p>
         </div>
+        <div className='idea-interaction'>
+            <div className='idea-vote'>
+                <img src='/icons/upvote.svg' alt="Upvote"/>
+                <p className='interaction'>9410</p>
+            </div>
+            <div className='idea-comment'>
+                <img src='/icons/commentaire.svg' alt="Commentaire"/>
+                <p className='interaction'>145</p>
+            </div>
+        </div>
     </div>
 );
 
-const IdeaItem = ({ content, username, title, category, userImage, onSelect }) => (
+const IdeaItem = ({ content, username, title, category, userImage, likes, onSelect }) => (
     <div className='idea-container'>
         <div className='idea-content' onClick={onSelect}>
             <div className='user-info'>
@@ -48,7 +58,7 @@ const IdeaItem = ({ content, username, title, category, userImage, onSelect }) =
         <div className='idea-interaction'>
             <div className='idea-vote'>
                 <img src='/icons/upvote.svg' alt="Upvote"/>
-                <p className='interaction'>9410</p>
+                <p className='interaction'>{likes}</p>
             </div>
             <div className='idea-comment'>
                 <img src='/icons/commentaire.svg' alt="Commentaire"/>
