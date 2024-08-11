@@ -9,7 +9,6 @@ const truncateText = (text, maxLength) => {
 
 const Modal = ({ content, username, title, category, userImage, likes, comments, onClose }) => (
     <div className="modal-overlay" onClick={onClose}>
-        <button className="close-button" onClick={onClose}>X</button>
         <div className="modal-content" onClick={e => e.stopPropagation()}>
             <div className='user-info'>
                 <img src={userImage} alt={`Avatar de ${username}`}/>
@@ -51,6 +50,7 @@ const Modal = ({ content, username, title, category, userImage, likes, comments,
                 ))}
             </div>
         </div>
+        <img src='icons/close.svg' alt='croix' className="close-button" onClick={onClose}/>
     </div>
 );
 
