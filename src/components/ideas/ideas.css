@@ -141,6 +141,7 @@
     background-color: black;
 }
 
+/*CSS de modal*/
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -166,6 +167,14 @@
     box-sizing: border-box;
 }
 
+.idea-interaction__modal {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    height: 100%;
+    margin: 20px 0 20px 0;
+}
+
 .close-button {
     position: absolute;
     top: 10px;
@@ -174,4 +183,50 @@
     border: none;
     font-size: 18px;
     cursor: pointer;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 0 0 0 20px;
+    margin: 0 0 20px 0;
+    background-color: white;
+}
+
+.input-field {
+    flex-grow: 1;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-family: Inter;
+    font-size: 16px;
+    color: black;
+    padding: 0 10px 0 0;
+}
+
+.send-button {
+    cursor: pointer;
+    margin: 0 20px 0 10px;
+}
+.send-button:hover {
+    filter: brightness(0) saturate(100%) invert(50%);
+}
+
+.list-comments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comment {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.img-comments {
+    width: 60px;
+    height: 60px;
 }

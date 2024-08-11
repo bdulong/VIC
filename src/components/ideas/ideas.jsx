@@ -7,7 +7,7 @@ const truncateText = (text, maxLength) => {
     return text.slice(0, maxLength) + '...';
 };
 
-const Modal = ({ content, username, title, category, userImage, onClose }) => (
+const Modal = ({ content, username, title, category, userImage, likes, comments, onClose }) => (
     <div className="modal-overlay" onClick={onClose}>
         <button className="close-button" onClick={onClose}>X</button>
         <div className="modal-content" onClick={e => e.stopPropagation()}>
@@ -23,15 +23,32 @@ const Modal = ({ content, username, title, category, userImage, onClose }) => (
                 </div>
             </div>
             <p>{content}</p>
-        </div>
-        <div className='idea-interaction'>
-            <div className='idea-vote'>
-                <img src='/icons/upvote.svg' alt="Upvote"/>
-                <p className='interaction'>9410</p>
+            <div className='idea-interaction__modal'>
+                <div className='idea-vote'>
+                    <img src='/icons/upvote.svg' alt="Upvote"/>
+                    <p className='interaction'>{likes}</p>
+                </div>
+                <div className='idea-comment'>
+                    <img src='/icons/commentaire.svg' alt="Commentaire"/>
+                    <p className='interaction'>{comments.length}</p>
+                </div>
             </div>
-            <div className='idea-comment'>
-                <img src='/icons/commentaire.svg' alt="Commentaire"/>
-                <p className='interaction'>145</p>
+            <div className="input-container">
+                <input type="text" placeholder="Ajouter un commentaire" className="input-field" />
+                <div className="send-button">
+                    <img src='/icons/send.svg' alt="Envoyer"/>
+                </div>
+            </div>
+            <div className="list-comments-container">
+                {comments.map((comment, index) => (
+                    <div key={index} className="comment">
+                        <img className='img-comments' src={comment.userImage} alt={`Avatar de ${comment.username}`}/>
+                        <div className="comment-content">
+                            <p className="comment-username">{comment.username}</p>
+                            <p className="comment-text">{comment.content}</p>
+                        </div>
+                    </div>
+                ))}
             </div>
         </div>
     </div>
