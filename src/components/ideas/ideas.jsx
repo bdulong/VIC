@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './ideas.css';
 import Header from "../assets/header/header.jsx";
 
@@ -54,7 +55,7 @@ const Modal = ({ content, username, title, category, userImage, likes, comments,
     </div>
 );
 
-const IdeaItem = ({ content, username, title, category, userImage, likes, onSelect }) => (
+const IdeaItem = ({ content, username, title, category, userImage, likes, comments, onSelect }) => (
     <div className='idea-container'>
         <div className='idea-content' onClick={onSelect}>
             <div className='user-info'>
@@ -79,7 +80,7 @@ const IdeaItem = ({ content, username, title, category, userImage, likes, onSele
             </div>
             <div className='idea-comment'>
                 <img src='/icons/commentaire.svg' alt="Commentaire"/>
-                <p className='interaction'>145</p>
+                <p className='interaction'>{comments.length}</p>
             </div>
         </div>
     </div>
@@ -142,9 +143,9 @@ function IdeasPage() {
                     <div className='appel-action-text'>
                         <p>Les partis politique ne font que diviser les parisiens. C'est seulement en unissant leurs forces que les Parisiens pourront redonner tout son sens à la démocratie et façonner un avenir où chaque voix compte vraiment.</p>
                     </div>
-                    <div className='appel-action-cta'>
+                    <Link className='appel-action-cta' to="/nous-rejoindre">
                         <p>Rejoignez-nous</p>
-                    </div>
+                    </Link>
                 </div>
                 {ideas.slice(2).map((idea, index) => (
                     <IdeaItem 
