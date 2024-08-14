@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './ideas.css';
 import Header from "../assets/header/header.jsx";
@@ -8,54 +8,64 @@ const truncateText = (text, maxLength) => {
     return text.slice(0, maxLength) + '...';
 };
 
-const Modal = ({ content, username, title, category, userImage, likes, comments, onClose }) => (
-    <div className="modal-overlay" onClick={onClose}>
-        <div className="modal-content" onClick={e => e.stopPropagation()}>
-            <div className='user-info'>
-                <img src={userImage} alt={`Avatar de ${username}`}/>
-                <div className='idea-title'>
-                    <p>{username}</p>
-                    <h4>{title}</h4>
-                </div>
-                <div className='idea-category'>
-                    <img src='/icons/tag.svg' alt="Catégorie"/>
-                    <h4 className='tag'>{category}</h4>
-                </div>
-            </div>
-            <p>{content}</p>
-            <div className='idea-interaction__modal'>
-                <div className='idea-vote'>
-                    <img src='/icons/upvote.svg' alt="Upvote"/>
-                    <p className='interaction'>{likes}</p>
-                </div>
-                <div className='idea-comment'>
-                    <img src='/icons/commentaire.svg' alt="Commentaire"/>
-                    <p className='interaction'>{comments.length}</p>
-                </div>
-            </div>
-            <div className="input-container">
-                <input type="text" placeholder="Ajouter un commentaire" className="input-field" />
-                <div className="send-button">
-                    <img src='/icons/send.svg' alt="Envoyer"/>
-                </div>
-            </div>
-            <div className="list-comments-container">
-                {comments.map((comment, index) => (
-                    <div key={index} className="comment">
-                        <img className='img-comments' src={comment.userImage} alt={`Avatar de ${comment.username}`}/>
-                        <div className="comment-content">
-                            <p className="comment-username">{comment.username}</p>
-                            <p className="comment-text">{comment.content}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-        <img src='icons/close.svg' alt='croix' className="close-button" onClick={onClose}/>
-    </div>
-);
+const Modal = ({ content, username, title, category, userImage, likes, comments, onClose, scrollToComments }) => {
+    const commentsRef = useRef(null);
 
-const IdeaItem = ({ content, username, title, category, userImage, likes, comments, onSelect }) => (
+    useEffect(() => {
+        if (scrollToComments && commentsRef.current) {
+            commentsRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [scrollToComments]);
+
+    return (
+        <div className="modal-overlay" onClick={onClose}>
+            <div className="modal-content" onClick={e => e.stopPropagation()}>
+                <div className='user-info'>
+                    <img src={userImage} alt={`Avatar de ${username}`}/>
+                    <div className='idea-title'>
+                        <p>{username}</p>
+                        <h4>{title}</h4>
+                    </div>
+                    <div className='idea-category'>
+                        <img src='/icons/tag.svg' alt="Catégorie"/>
+                        <h4 className='tag'>{category}</h4>
+                    </div>
+                </div>
+                <p>{content}</p>
+                <div className='idea-interaction__modal'>
+                    <div className='idea-vote'>
+                        <img src='/icons/upvote.svg' alt="Upvote"/>
+                        <p className='interaction'>{likes}</p>
+                    </div>
+                    <div className='idea-comment'>
+                        <img src='/icons/commentaire.svg' alt="Commentaire"/>
+                        <p className='interaction'>{comments.length}</p>
+                    </div>
+                </div>
+                <div className="input-container">
+                    <input type="text" placeholder="Ajouter un commentaire" className="input-field" />
+                    <div className="send-button">
+                        <img src='/icons/send.svg' alt="Envoyer"/>
+                    </div>
+                </div>
+                <div className="list-comments-container" ref={commentsRef}>
+                    {comments.map((comment, index) => (
+                        <div key={index} className="comment">
+                            <img className='img-comments' src={comment.userImage} alt={`Avatar de ${comment.username}`}/>
+                            <div className="comment-content">
+                                <p className="comment-username">{comment.username}</p>
+                                <p className="comment-text">{comment.content}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <img src='icons/close.svg' alt='croix' className="close-button" onClick={onClose}/>
+        </div>
+    );
+};
+
+const IdeaItem = ({ content, username, title, category, userImage, likes, comments, onSelect, onCommentClick }) => (
     <div className='idea-container'>
         <div className='idea-content' onClick={onSelect}>
             <div className='user-info'>
@@ -78,7 +88,7 @@ const IdeaItem = ({ content, username, title, category, userImage, likes, commen
                 <img src='/icons/upvote.svg' alt="Upvote"/>
                 <p className='interaction'>{likes}</p>
             </div>
-            <div className='idea-comment'>
+            <div className='idea-comment' onClick={onCommentClick}>
                 <img src='/icons/commentaire.svg' alt="Commentaire"/>
                 <p className='interaction'>{comments.length}</p>
             </div>
@@ -91,6 +101,7 @@ function IdeasPage() {
     const [categories, setCategories] = useState([]);
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedIdea, setSelectedIdea] = useState(null);
+    const [scrollToComments, setScrollToComments] = useState(false);
     const [error, setError] = useState(null);
 
     useEffect(() => {
@@ -109,6 +120,12 @@ function IdeasPage() {
                 setError('Erreur lors du chargement des données');
             });
     }, []);
+
+    const openModal = (idea, shouldScrollToComments = false) => {
+        setSelectedIdea(idea);
+        setModalOpen(true);
+        setScrollToComments(shouldScrollToComments);
+    };
 
     return (
         <div>
@@ -136,7 +153,11 @@ function IdeasPage() {
                     <IdeaItem 
                         key={index}
                         {...idea}
-                        onSelect={() => { setSelectedIdea(idea); setModalOpen(true); }}
+                        onSelect={() => openModal(idea)}
+                        onCommentClick={(e) => {
+                            e.stopPropagation();
+                            openModal(idea, true);
+                        }}
                     />
                 ))}
                 <div className='appel-action-container'>
@@ -151,14 +172,19 @@ function IdeasPage() {
                     <IdeaItem 
                         key={index + 2}
                         {...idea}
-                        onSelect={() => { setSelectedIdea(idea); setModalOpen(true); }}
+                        onSelect={() => openModal(idea)}
+                        onCommentClick={(e) => {
+                            e.stopPropagation();
+                            openModal(idea, true);
+                        }}
                     />
                 ))}
             </div>
             {modalOpen && selectedIdea && (
                 <Modal 
                     {...selectedIdea}
-                    onClose={() => setModalOpen(false)} 
+                    onClose={() => setModalOpen(false)}
+                    scrollToComments={scrollToComments}
                 />
             )}
         </div>
