@@ -37,7 +37,7 @@ const Modal = ({ content, username, title, category, userImage, likes, comments,
                         <img src='/icons/upvote.svg' alt="Upvote"/>
                         <p className='interaction'>{likes}</p>
                     </div>
-                    <div className='idea-comment'>
+                    <div className='idea-comment__modal'>
                         <img src='/icons/commentaire.svg' alt="Commentaire"/>
                         <p className='interaction'>{comments.length}</p>
                     </div>
