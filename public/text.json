@@ -5,18 +5,19 @@
             "username": "Johnson Dolito",
             "title": "Replace old transportation comodities",
             "category": "Transport",
-            "userImage": "/images/user.png",
+            "attachedPictures": ["/images/test-image1.webp", "/images/test-image2.webp", "/images/test-image3.webp", "/images/test-image4.webp"],
+            "userImage": "/images/user.webp",
             "likes": 1145,
             "comments": [
                 {
                     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a iaculis sem. Integer interdum libero ut nunc maximus, eget porta odio lobortis. In aliquam et lectus sed ultricies. Pellentesque iaculis nunc vitae nisl egestas scelerisque. Etiam maximus mollis posuere. Nunc pharetra sapien porta nisl egestas tincidunt. Suspendisse potenti. Maecenas ut velit sed dui fringilla convallis ac sed lorem. Suspendisse augue dolor, aliquam et dui et, egestas eleifend dui. Sed cursus tempus maximus. Phasellus sed tellus eget purus tempor volutpat. Morbi laoreet massa non neque porttitor consequat. Praesent tristique diam vel metus ultrices efficitur in at erat. Vivamus posuere ullamcorper hendrerit. Duis nec odio enim. Fusce sed placerat ipsum.",
                     "username": "Alice Smith",
-                    "userImage": "/images/user.png"
+                    "userImage": "/images/user.webp"
                 },
                 {
                     "content": "I think this is a great idea, we should definitely consider it.",
                     "username": "Bob Johnson",
-                    "userImage": "/images/user.png"
+                    "userImage": "/images/user.webp"
                 }
             ]
         },
@@ -25,18 +26,19 @@
             "username": "Alice Smith",
             "title": "Innovative urban planning",
             "category": "Urbanisme",
-            "userImage": "/images/user.png",
+            "attachedPictures": ["/images/test-image4.webp", "/images/test-image5.webp"],
+            "userImage": "/images/user.webp",
             "likes": 15,
             "comments": [
                 {
                     "content": "I think this is a great idea, we should definitely consider it.",
                     "username": "Alice Smith",
-                    "userImage": "/images/user.png"
+                    "userImage": "/images/user.webp"
                 },
                 {
                     "content": "I think this is a great idea, we should definitely consider it.",
                     "username": "Bob Johnson",
-                    "userImage": "/images/user.png"
+                    "userImage": "/images/user.webp"
                 }
             ]
         },
@@ -45,18 +47,19 @@
             "username": "Bob Johnson",
             "title": "Green spaces initiative",
             "category": "Espaces verts",
-            "userImage": "/images/user.png",
+            "attachedPictures": ["/images/test-image1.webp", "/images/test-image2.webp", "/images/test-image3.webp", "/images/test-image4.webp", "/images/test-image5.webp"],
+            "userImage": "/images/user.webp",
             "likes": 547,
             "comments": [
                 {
                     "content": "I think this is a great idea, we should definitely consider it.",
                     "username": "Alice Smith",
-                    "userImage": "/images/user.png"
+                    "userImage": "/images/user.webp"
                 },
                 {
                     "content": "I think this is a great idea, we should definitely consider it.",
                     "username": "Bob Johnson",
-                    "userImage": "/images/user.png"
+                    "userImage": "/images/user.webp"
                 }
             ]
         }

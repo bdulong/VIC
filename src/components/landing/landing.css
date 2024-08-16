@@ -2,7 +2,7 @@
 .hero-banner__container {
     position: relative;
     height: 100%;
-    background-image: url('../../../public/images/hero-banner-picture.png');
+    background-image: url('../../../public/images/hero-banner-picture.webp');
     background-size: cover;
     background-position: center;
     display: flex;

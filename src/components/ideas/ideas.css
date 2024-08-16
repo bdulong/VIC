@@ -89,6 +89,54 @@
     background-color: rgb(241, 241, 241);
 }
 
+.pictures-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin: 20px 0 0 0;
+}
+.pictures-container img {
+    max-width: 280px;
+    max-height: 120px;
+}
+
+/*Modal des images*/
+.image-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100; /* Un z-index plus élevé que la modal principale */
+}
+
+.image-modal-content {
+    background-color: transparent;
+    max-width: 90%;
+    max-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.image-close-button:hover {
+    opacity: 0.8;
+}
+
 .idea-interaction {
     display: flex;
     flex-direction: column;

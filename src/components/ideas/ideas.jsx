@@ -8,7 +8,16 @@ const truncateText = (text, maxLength) => {
     return text.slice(0, maxLength) + '...';
 };
 
-const Modal = ({ content, username, title, category, userImage, likes, comments, onClose, scrollToComments }) => {
+const ImageModal = ({ imageUrl, onClose }) => (
+    <div className="image-modal-overlay" onClick={onClose}>
+        <div className="image-modal-content" onClick={e => e.stopPropagation()}>
+            <img src={imageUrl} alt="Agrandie" style={{ maxWidth: '100%', maxHeight: '80vh' }} />
+        </div>
+        <img src='icons/close.svg' alt='croix' className="image-close-button" onClick={onClose}/>
+    </div>
+);
+
+const Modal = ({ content, username, title, category, userImage, attachedPictures, likes, comments, onClose, scrollToComments, openImageModal }) => {
     const commentsRef = useRef(null);
 
     useEffect(() => {
@@ -32,6 +41,20 @@ const Modal = ({ content, username, title, category, userImage, likes, comments,
                     </div>
                 </div>
                 <p>{content}</p>
+                <div className='pictures-container'>
+                    {Array.isArray(attachedPictures) && attachedPictures.map((picture, index) => (
+                        <img 
+                            key={index} 
+                            src={picture} 
+                            alt={`Pièce jointe ${index + 1} de ${username}`}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                openImageModal(picture);
+                            }}
+                            style={{ cursor: 'pointer' }}
+                        />
+                    ))}
+                </div>
                 <div className='idea-interaction__modal'>
                     <div className='idea-vote'>
                         <img src='/icons/upvote.svg' alt="Upvote"/>
@@ -65,36 +88,52 @@ const Modal = ({ content, username, title, category, userImage, likes, comments,
     );
 };
 
-const IdeaItem = ({ content, username, title, category, userImage, likes, comments, onSelect, onCommentClick }) => (
-    <div className='idea-container'>
-        <div className='idea-content' onClick={onSelect}>
-            <div className='user-info'>
-                <img src={userImage} alt={`Avatar de ${username}`}/>
-                <div className='idea-title'>
-                    <p>{username}</p>
-                    <h4>{title}</h4>
+const IdeaItem = ({ content, username, title, category, attachedPictures, userImage, likes, comments, onSelect, onCommentClick, openImageModal }) => {
+    return (
+        <div className='idea-container'>
+            <div className='idea-content' onClick={onSelect}>
+                <div className='user-info'>
+                    <img src={userImage} alt={`Avatar de ${username}`}/>
+                    <div className='idea-title'>
+                        <p>{username}</p>
+                        <h4>{title}</h4>
+                    </div>
+                    <div className='idea-category'>
+                        <img src='/icons/tag.svg' alt="Catégorie"/>
+                        <h4 className='tag'>{category}</h4>
+                    </div>
                 </div>
-                <div className='idea-category'>
-                    <img src='/icons/tag.svg' alt="Catégorie"/>
-                    <h4 className='tag'>{category}</h4>
+                <div className='idea-text-preview'>
+                    <p>{truncateText(content, 240)}</p>
+                </div>
+                <div className='pictures-container'>
+                    {Array.isArray(attachedPictures) && attachedPictures.map((picture, index) => (
+                        <img 
+                            key={index} 
+                            src={picture} 
+                            alt={`Pièce jointe ${index + 1} de ${username}`}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                openImageModal(picture);
+                            }}
+                            style={{ cursor: 'pointer' }}
+                        />
+                    ))}
                 </div>
             </div>
-            <div className='idea-text-preview'>
-                <p>{truncateText(content, 240)}</p>
+            <div className='idea-interaction'>
+                <div className='idea-vote'>
+                    <img src='/icons/upvote.svg' alt="Upvote"/>
+                    <p className='interaction'>{likes}</p>
+                </div>
+                <div className='idea-comment' onClick={onCommentClick}>
+                    <img src='/icons/commentaire.svg' alt="Commentaire"/>
+                    <p className='interaction'>{comments.length}</p>
+                </div>
             </div>
         </div>
-        <div className='idea-interaction'>
-            <div className='idea-vote'>
-                <img src='/icons/upvote.svg' alt="Upvote"/>
-                <p className='interaction'>{likes}</p>
-            </div>
-            <div className='idea-comment' onClick={onCommentClick}>
-                <img src='/icons/commentaire.svg' alt="Commentaire"/>
-                <p className='interaction'>{comments.length}</p>
-            </div>
-        </div>
-    </div>
-);
+    );
+};
 
 function IdeasPage() {
     const [ideas, setIdeas] = useState([]);
@@ -103,6 +142,7 @@ function IdeasPage() {
     const [selectedIdea, setSelectedIdea] = useState(null);
     const [scrollToComments, setScrollToComments] = useState(false);
     const [error, setError] = useState(null);
+    const [selectedImage, setSelectedImage] = useState(null);
 
     useEffect(() => {
         fetch('/text.json')
@@ -127,6 +167,20 @@ function IdeasPage() {
         setScrollToComments(shouldScrollToComments);
     };
 
+    const closeModal = () => {
+        setModalOpen(false);
+        setSelectedIdea(null);
+        setScrollToComments(false);
+    };
+
+    const openImageModal = (imageUrl) => {
+        setSelectedImage(imageUrl);
+    };
+
+    const closeImageModal = () => {
+        setSelectedImage(null);
+    };
+
     return (
         <div>
             <Header />
@@ -149,7 +203,7 @@ function IdeasPage() {
             </div>
             <div className='ideas-list-container'>
                 {error && <p className="error-message">{error}</p>}
-                {ideas.slice(0, 2).map((idea, index) => (
+                {ideas.map((idea, index) => (
                     <IdeaItem 
                         key={index}
                         {...idea}
@@ -158,6 +212,7 @@ function IdeasPage() {
                             e.stopPropagation();
                             openModal(idea, true);
                         }}
+                        openImageModal={openImageModal}
                     />
                 ))}
                 <div className='appel-action-container'>
@@ -183,8 +238,15 @@ function IdeasPage() {
             {modalOpen && selectedIdea && (
                 <Modal 
                     {...selectedIdea}
-                    onClose={() => setModalOpen(false)}
+                    onClose={closeModal}
                     scrollToComments={scrollToComments}
+                    openImageModal={openImageModal}
+                />
+            )}
+            {selectedImage && (
+                <ImageModal 
+                    imageUrl={selectedImage} 
+                    onClose={closeImageModal}
                 />
             )}
         </div>
