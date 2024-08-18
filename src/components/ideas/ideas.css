@@ -39,7 +39,9 @@
 .categories {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 20px;
+    overflow-x: auto;
     align-items: center;
 }
 .categories ul {
@@ -54,21 +56,13 @@
     color : grey;
     cursor: pointer;
 }
-@media (max-width: 1200px) {
-    .categories {
-        justify-content: flex-start;
-        gap: 20px;
-        overflow-x: auto;
-    }
-
-    /* Cacher la scrollbar tout en gardant la fonctionnalité */
-    .categories::-webkit-scrollbar {
-        display: none;
-    }
-    .categories {
-        /* -ms-overflow-style: none;  Pour Internet Explorer et Edge */
-        scrollbar-width: none;  /* Pour Firefox */
-    }
+/* Cacher la scrollbar tout en gardant la fonctionnalité */
+.categories::-webkit-scrollbar {
+    display: none;
+}
+.categories {
+    /* -ms-overflow-style: none;  Pour Internet Explorer et Edge */
+    scrollbar-width: none;  /* Pour Firefox */
 }
 
 .ideas-list-container {
