@@ -39,7 +39,7 @@ const Header = () => {
                         <Link to="/se-connecter"><ul>Se connecter</ul></Link>
                     </div>
                     <div ref={burgerRef} className="burger-menu" onClick={toggleMobileMenu}>
-                        <img 
+                        <img className='icon-burger'
                             src={isMobileMenuOpen ? '/icons/close.svg' : '/icons/burger.svg'} 
                             alt={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
                         />

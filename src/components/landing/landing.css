@@ -20,6 +20,7 @@
 @media (max-width: 520px) {  
     .hero-banner__container {
         padding: 0 10px;
+        margin: 54.5px 0 0 0;
     }
 }
 

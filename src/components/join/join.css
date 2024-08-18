@@ -1,6 +1,21 @@
 .title-container {
     margin: 106px 80px 20px 80px;
 }
+@media (max-width: 1020px) {  
+    .title-container {
+        margin: 106px 40px 20px 40px;
+    }
+}
+@media (max-width: 520px) {  
+    .title-container {
+        margin: 96px 10px 20px 10px;
+    }
+}
+@media (min-width: 1400px) {  
+    .title-container {
+        margin: 106px 268px 20px 268px;
+    }
+}
 
 .title-content {
     display: flex;
