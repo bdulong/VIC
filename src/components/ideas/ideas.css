@@ -36,6 +36,10 @@
     margin: 10px 0 0 0;
 }
 
+.category-container {
+    position: relative;
+}
+
 .categories {
     display: flex;
     flex-direction: row;
@@ -63,6 +67,34 @@
 .categories {
     /* -ms-overflow-style: none;  Pour Internet Explorer et Edge */
     scrollbar-width: none;  /* Pour Firefox */
+}
+
+.category-scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.category-scroll-button--left {
+    left: 10px;
+}
+
+.category-scroll-button--right {
+    right: 10px;
+}
+
+.category-scroll-button img {
+    width: 16px;
+    height: 16px;
 }
 
 .ideas-list-container {
