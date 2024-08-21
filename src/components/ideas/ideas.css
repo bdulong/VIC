@@ -295,6 +295,18 @@
 .close-button:hover {
     filter: brightness(0) saturate(100%) invert(50%);
 }
+.close-button-image-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    filter: invert(1);
+}
+.close-button-image-modal:hover {
+    filter: brightness(0) saturate(100%) invert(50%);
+}
 
 .input-container {
     display: flex;

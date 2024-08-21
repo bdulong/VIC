@@ -13,7 +13,7 @@ const ImageModal = ({ imageUrl, onClose }) => (
         <div className="image-modal-content" onClick={e => e.stopPropagation()}>
             <img src={imageUrl} alt="Agrandie" style={{ maxWidth: '100%', maxHeight: '80vh' }} />
         </div>
-        <img src='icons/close.svg' alt='croix' className="close-button" onClick={onClose}/>
+        <img src='icons/close.svg' alt='croix' className="close-button-image-modal" onClick={onClose}/>
     </div>
 );
 
