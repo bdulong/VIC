@@ -209,7 +209,7 @@ function IdeasPage() {
             </div>
             <div className='ideas-list-container'>
                 {error && <p className="error-message">{error}</p>}
-                {ideas.map((idea, index) => (
+                {ideas.slice(0, 2).map((idea, index) => (
                     <IdeaItem 
                         key={index}
                         {...idea}
@@ -230,8 +230,8 @@ function IdeasPage() {
                     </Link>
                 </div>
                 {ideas.slice(2).map((idea, index) => (
-                    <IdeaItem 
-                        key={index + 2}
+                    <IdeaItem
+                        key={index + ideas.length}
                         {...idea}
                         onSelect={() => openModal(idea)}
                         onCommentClick={(e) => {
