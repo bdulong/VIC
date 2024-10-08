@@ -192,7 +192,7 @@ function IdeasPage() {
                     </div>
                     <p>Pour trouver une nouvelle voie, ou des gens d'opinions différentes</p>
                 </div>
-                <div className='category-container'>
+                {/* <div className='category-container'>
                     <div className='category-scroll-button category-scroll-button--left'>
                         <img src='/icons/arrow.svg' alt="Défilement à gauche" />
                     </div>
@@ -205,7 +205,7 @@ function IdeasPage() {
                         <img src='/icons/arrow.svg' alt="Défilement à droite" />
                     </div>
                 </div>
-                <hr />
+                <hr /> */}
             </div>
             <div className='ideas-list-container'>
                 {error && <p className="error-message">{error}</p>}
