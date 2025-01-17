@@ -285,6 +285,11 @@
     border-radius: 50px 50px 0 0;
     box-sizing: border-box;
 }
+@media (max-width: 520px) {  
+    .appel-action-text  {
+        padding: 20px 20px 10px 20px;
+    }
+}
 
 .appel-action-cta {
     display: flex;
@@ -295,6 +300,11 @@
     border-bottom: 2px solid #000000;
     border-radius: 0 0 50px 50px;
     box-sizing: border-box;
+}
+@media (max-width: 520px) {  
+    .appel-action-cta  {
+        padding: 10px 20px 10px 20px;
+    }
 }
 .appel-action-cta:hover {
     cursor: pointer;
@@ -331,6 +341,7 @@
 @media (max-width: 520px) {  
     .modal-content  {
         padding: 20px;
+        max-width: 90%;
     }
 }
 
