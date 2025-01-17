@@ -184,20 +184,6 @@ function IdeasPage() {
                     </div>
                     <p>Pour trouver une nouvelle voie, ou des gens d'opinions différentes</p>
                 </div>
-                {/* <div className='category-container'>
-                    <div className='category-scroll-button category-scroll-button--left'>
-                        <img src='/icons/arrow.svg' alt="Défilement à gauche" />
-                    </div>
-                    <div className='categories'>
-                        {categories.map((category, index) => (
-                            <ul key={index}>{category}</ul>
-                        ))}
-                    </div>
-                    <div className='category-scroll-button category-scroll-button--right'>
-                        <img src='/icons/arrow.svg' alt="Défilement à droite" />
-                    </div>
-                </div>
-                <hr /> */}
             </div>
             <div className='ideas-list-container'>
                 {error && <p className="error-message">{error}</p>}
