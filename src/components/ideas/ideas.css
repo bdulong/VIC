@@ -157,6 +157,7 @@
     max-width: 100%;
     overflow-x: hidden;
 }
+
 .idea-content:hover {
     cursor: pointer;
     background-color: rgb(241, 241, 241);

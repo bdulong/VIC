@@ -16,8 +16,8 @@ const ImageModal = ({ imageUrl, onClose }) => (
         <img src='icons/close.svg' alt='croix' className="close-button-image-modal" onClick={onClose}/>
     </div>
 );
-
-const Modal = ({ content, username, title, category, userImage, attachedPictures, likes, comments, onClose, scrollToComments, openImageModal }) => {
+//category
+const Modal = ({ content, username, title, userImage, attachedPictures, likes, comments, onClose, scrollToComments, openImageModal }) => {
     const commentsRef = useRef(null);
 
     useEffect(() => {
@@ -34,10 +34,6 @@ const Modal = ({ content, username, title, category, userImage, attachedPictures
                     <div className='idea-title'>
                         <p>{username}</p>
                         <h4>{title}</h4>
-                    </div>
-                    <div className='idea-category'>
-                        <img src='/icons/tag.svg' alt="Catégorie"/>
-                        <h4 className='tag'>{category}</h4>
                     </div>
                 </div>
                 <p>{content}</p>
@@ -98,10 +94,6 @@ const IdeaItem = ({ content, username, title, category, attachedPictures, userIm
                         <p>{username}</p>
                         <h4>{title}</h4>
                     </div>
-                    <div className='idea-category'>
-                        <img src='/icons/tag.svg' alt="Catégorie"/>
-                        <h4 className='tag'>{category}</h4>
-                    </div>
                 </div>
                 <div className='idea-text-preview'>
                     <p>{truncateText(content, 240)}</p>
@@ -137,7 +129,7 @@ const IdeaItem = ({ content, username, title, category, attachedPictures, userIm
 
 function IdeasPage() {
     const [ideas, setIdeas] = useState([]);
-    const [categories, setCategories] = useState([]);
+    // const [categories, setCategories] = useState([]);
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedIdea, setSelectedIdea] = useState(null);
     const [scrollToComments, setScrollToComments] = useState(false);
@@ -150,7 +142,7 @@ function IdeasPage() {
             .then(data => {
                 if (data && data.ideas && data.categories) {
                     setIdeas(data.ideas);
-                    setCategories(data.categories);
+                    // setCategories(data.categories);
                 } else {
                     setError('Données manquantes dans le JSON');
                 }
